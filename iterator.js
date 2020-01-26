@@ -9,14 +9,14 @@ const obj = {
     return {
       next: () => {
         if (numberIndex !== this.numbers.length) {
-          return { value: this.numbers[numberIndex++], done: false }
+          return {value: this.numbers[numberIndex++], done: false}
         }
 
         if (letterIndex !== this.letters.length) {
-          return { value: this.letters[letterIndex++], done: false }
+          return {value: this.letters[letterIndex++], done: false}
         }
 
-        return { value: undefined, done: true }
+        return {value: undefined, done: true}
       }
     }
   }
@@ -25,7 +25,7 @@ const obj = {
 const obj2 = {
   numbers: [1, 2, 3, 4, 5],
   letters: ['a', 'b', 'c'],
-  *[Symbol.iterator] () {
+  * [Symbol.iterator]() {
     for (const number of this.numbers) {
       yield number;
     }
@@ -45,6 +45,6 @@ for (const val of obj2) {
 }
 
 const it = obj2[Symbol.iterator]();
-for (let { value, done } = it.next(); !done; { value, done } = it.next()) {
+for (let {value, done} = it.next(); !done; {value, done} = it.next()) {
   console.log('manual.value: ', value);
 }
