@@ -1,1 +1,1 @@
-###### Explore
+Fundamental JavaScript snippets
