@@ -86,17 +86,18 @@ const ITEMS = [
   },
 ];
 
-console.time('knapsack');
-for (let i = 0; i < 10000; i++) {
-  knapsack(ITEMS, MAX_WEIGHT);
+function time() {
+  console.time('knapsack');
+  for (let i = 0; i < 10000; i++) {
+    knapsack(ITEMS, MAX_WEIGHT);
+  }
+  console.timeEnd('knapsack');
+
+  console.time('bottomUp');
+  for (let i = 0; i < 10000; i++) {
+    bottomUp(ITEMS, MAX_WEIGHT);
+  }
+  console.timeEnd('bottomUp');
 }
-console.timeEnd('knapsack');
 
-console.time('bottomUp');
-for (let i = 0; i < 10000; i++) {
-  bottomUp(ITEMS, MAX_WEIGHT);
-}
-console.timeEnd('bottomUp');
-
-
-
+module.exports = {bottomUp, knapsack};
