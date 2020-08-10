@@ -4,7 +4,13 @@ function* generator(max) {
   }
 }
 
-for (const value of generator(10)) {
+const gen = generator(10);
+
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+
+for (const value of gen) {
   console.log('value: ', value);
 }
 
