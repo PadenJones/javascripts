@@ -6,7 +6,7 @@ function* generator(max) {
 
 const gen = generator(10);
 
-console.log(gen.next());
+console.log(gen.next()); // should print: `{ value: 0, done: false }`
 console.log(gen.next());
 console.log(gen.next());
 
